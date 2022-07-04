@@ -13,7 +13,7 @@ export const counterSlice = createSlice({
             state.value -= 1
         },
         increase(state, actions){
-            state.value += actions.amount
+            state.value += actions.payload   // payload is mendatory in createSlice method to access the extra data we passed in 
         },
         toggleCounter(state){
             state.showCounter = !state.showCounter
