@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 5rem;
+    height: 120px;
+    width: 50%;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.container h2{
+    font-size: 1.8rem;
+    color: #333;
+}
