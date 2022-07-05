@@ -1,29 +1,37 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {value : 0, showCounter : true}
-// creating an state slice
+const initialState = {
+    value: 0,
+    showCounter: true
+}
+
 export const counterSlice = createSlice({
     name : 'counter',
     initialState: initialState,
     reducers: {
-        increment : (state) => {
-            state.value += 1
+        increment: (state) => {
+            state.value = state.value + 1
         },
-        decrement : (state) =>{
-            state.value -= 1
+        decrement : (state) => {
+            state.value = state.value - 1
         },
-        increase(state, actions){
-            state.value += actions.payload   // payload is mendatory in createSlice method to access the extra data we passed in 
+
+        increase : (state) =>{
+            state.value = state.value + state.payload
         },
-        toggleCounter(state){
-            state.showCounter = !state.showCounter
+        toggle: (state) =>{
+            state.showCounter = !state.showCounter;
+            state.value = state.value
+
         }
+
     }
 })
 
-export const {increment, decrement, increase, toggleCounter} = counterSlice.actions;
+export const {increment, decrement, increase, toggle} = counterSlice.actions;
 
-export default counterSlice.reducer;
+export default counterSlice.reducer
+
 
 // Creating a slice requires a string name to identify the slice, an initial state value
 // and one or more reduxer functions to define how the state can be updated.
