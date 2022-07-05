@@ -1,0 +1,36 @@
+.navbar_container{
+    height: 100px;
+    width: 100%;
+    background: cornsilk;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 6rem;
+}
+.navbar_container h2{
+    font-size: 2.2rem;
+    color: #333;
+}
+.navbar_container ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 0.5rem  1.3rem;
+    font-size: 1.7rem;
+}
+.navbar_container ul li a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.btn{
+  
+    background-color: orange;
+    border-radius: 0.6rem;
+}
+.btn:hover{
+    background-color: gray;
+    transition: all 0.3s ease;
+    color: white !important;
+}
