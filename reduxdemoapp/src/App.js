@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import Auth from "./components/Auth";
 import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
+import Counter from "./components/Counter";
 
 function App() {
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
@@ -18,6 +19,7 @@ function App() {
      
      {isAuth && <Profile />}
 
+      <Counter />
     </>
   );
 }
