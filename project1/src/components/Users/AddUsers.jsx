@@ -9,31 +9,52 @@ const AddUsers = (props) => {
   const AddUserHandler = (e) => {
     e.preventDefault();
 
+    if(user.trim().length === 0 || age.trim().length === 0){
+        return;
+    }
+
+    if(+age < 1){
+        return;
+    }
+
     console.log(user, age);
+
+    setUser(""); // reset the input field back to empty
+    setAge("");
   };
 
-  const usernameHandle = (e) =>{
+  const usernameHandle = (e) => {
     e.preventDefault();
 
-    setUser(e.target.value)
+    setUser(e.target.value);
+  };
 
-  }
-
-  const ageHandle = (e) =>{
+  const ageHandle = (e) => {
     e.preventDefault();
 
-    setAge(e.target.value)
-    
-  }
+    setAge(e.target.value);
+  };
 
   return (
     <div className={styles.container}>
       <form onSubmit={AddUserHandler} className={styles.form}>
         <label htmlFor="username">Username</label>
-        <input type="text" value={user} id="username" placeholder="username" onChange={usernameHandle}/>
+        <input
+          type="text"
+          value={user}
+          id="username"
+          placeholder="username"
+          onChange={usernameHandle}
+        />
 
         <label htmlFor="age">Age(Years)</label>
-        <input type="number" value={age} id="age" placeholder="age" onChange={ageHandle}/>
+        <input
+          type="number"
+          value={age}
+          id="age"
+          placeholder="age"
+          onChange={ageHandle}
+        />
 
         <button type="submit">Add User</button>
       </form>
