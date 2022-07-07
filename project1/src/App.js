@@ -1,14 +1,9 @@
-import './App.css';
-
+import "./App.css";
+import AddUsers from "./components/Users/AddUsers";
 function App() {
   return (
     <>
-
-    
-    <h1>Hello there</h1>
-    
-    
-    
+      <AddUsers />
     </>
   );
 }
