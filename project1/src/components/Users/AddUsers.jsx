@@ -17,7 +17,7 @@ const AddUsers = (props) => {
         return;
     }
 
-    console.log(user, age);
+    // console.log(user, age);
 
     props.onAddUser(user, age); // calling onAddUserHandler function which is came from App.js through props
 
