@@ -6,12 +6,16 @@ const UsersList = (props) => {
   return (
     <>
       <ul className={classes.container}>
+        
         {props.users.map((user) => {
+
+          const { name, age, id} = user;
+
           return (
             <>
               <div className={classes.item}>
-                <li key={user.id}>
-                  {user.name} ({user.age} years old.)
+                <li key={id}>
+                  {name} ({age} years old.)
                 </li>
               </div>
             </>
