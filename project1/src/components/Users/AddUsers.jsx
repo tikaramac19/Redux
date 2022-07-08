@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "../Users/Users.module.css";
 import Card from "../Ui/Card";
+import swal from "sweetalert";
 
 const AddUsers = (props) => {
   const [user, setUser] = useState("");
@@ -10,11 +11,11 @@ const AddUsers = (props) => {
     e.preventDefault();
 
     if(user.trim().length === 0 || age.trim().length === 0){
-        return;
+        return swal("Error Alert!", "Entered valid username and age", "error");
     }
 
     if(+age < 1){
-        return;
+        return swal("Error Alert!", "Age should be greater than 1 .", "error");
     }
 
     // console.log(user, age);
